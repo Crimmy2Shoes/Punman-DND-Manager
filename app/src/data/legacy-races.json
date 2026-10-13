@@ -1,0 +1,258 @@
+[
+  {
+    "race": "Dwarf",
+    "name": "Darkvision",
+    "economy": "Passive",
+    "detail": "Accustomed to life underground, you have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can’t discern color in darkness, only shades of gray.",
+    "page": 3,
+    "source": "SRD 5.1"
+  },
+  {
+    "race": "Dwarf",
+    "name": "Dwarven Resilience",
+    "economy": "Passive",
+    "detail": "You have advantage on saving throws against poison, and you have resistance against poison damage.",
+    "page": 3,
+    "source": "SRD 5.1"
+  },
+  {
+    "race": "Dwarf",
+    "name": "Dwarven Combat Training",
+    "economy": "Passive",
+    "detail": "You have proficiency with the battleaxe, handaxe, light hammer, and warhammer.",
+    "page": 3,
+    "source": "SRD 5.1"
+  },
+  {
+    "race": "Dwarf",
+    "name": "Tool Proficiency",
+    "economy": "Passive",
+    "detail": "You gain proficiency with the artisan’s tools of your choice: smith’s tools, brewer’s supplies, or mason’s tools.",
+    "page": 3,
+    "source": "SRD 5.1"
+  },
+  {
+    "race": "Dwarf",
+    "name": "Stonecunning",
+    "economy": "Passive",
+    "detail": "Whenever you make an Intelligence (History) check related to the origin of stonework, you are considered proficient in the History skill and add double your proficiency bonus to the check, instead of your normal proficiency bonus.",
+    "page": 3,
+    "source": "SRD 5.1"
+  },
+  {
+    "race": "Hill Dwarf",
+    "name": "Dwarven Toughness",
+    "economy": "Passive",
+    "detail": "Your hit point maximum increases by 1, and it increases by 1 every time you gain a level.",
+    "page": 4,
+    "source": "SRD 5.1"
+  },
+  {
+    "race": "Elf",
+    "name": "Darkvision",
+    "economy": "Passive",
+    "detail": "Accustomed to twilit forests and the night sky, you have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can’t discern color in darkness, only shades of gray.",
+    "page": 4,
+    "source": "SRD 5.1"
+  },
+  {
+    "race": "Elf",
+    "name": "Keen Senses",
+    "economy": "Passive",
+    "detail": "You have proficiency in the Perception skill.",
+    "page": 4,
+    "source": "SRD 5.1"
+  },
+  {
+    "race": "Elf",
+    "name": "Fey Ancestry",
+    "economy": "Passive",
+    "detail": "You have advantage on saving throws against being charmed, and magic can’t put you to sleep.",
+    "page": 4,
+    "source": "SRD 5.1"
+  },
+  {
+    "race": "Elf",
+    "name": "Trance",
+    "economy": "Passive",
+    "detail": "Elves don’t need to sleep. Instead, they meditate deeply, remaining semiconscious, for 4 hours a day. (The Common word for such meditation is “trance.”) While meditating, you can dream after a fashion; such dreams are actually mental exercises that have become reflexive through years of practice. After resting in this way, you gain the same benefit that a human does from 8 hours of sleep.",
+    "page": 4,
+    "source": "SRD 5.1"
+  },
+  {
+    "race": "High Elf",
+    "name": "Elf Weapon Training",
+    "economy": "Passive",
+    "detail": "You have proficiency with the longsword, shortsword, shortbow, and longbow.",
+    "page": 4,
+    "source": "SRD 5.1"
+  },
+  {
+    "race": "High Elf",
+    "name": "Cantrip",
+    "economy": "Passive",
+    "detail": "You know one cantrip of your choice from the wizard spell list. Intelligence is your spellcasting ability for it.",
+    "page": 4,
+    "source": "SRD 5.1"
+  },
+  {
+    "race": "High Elf",
+    "name": "Extra Language",
+    "economy": "Passive",
+    "detail": "You can speak, read, and write one extra language of your choice.",
+    "page": 4,
+    "source": "SRD 5.1"
+  },
+  {
+    "race": "Halfling",
+    "name": "Lucky",
+    "economy": "Passive",
+    "detail": "When you roll a 1 on the d20 for an attack roll, ability check, or saving throw, you can reroll the die and must use the new roll.",
+    "page": 4,
+    "source": "SRD 5.1"
+  },
+  {
+    "race": "Halfling",
+    "name": "Brave",
+    "economy": "Passive",
+    "detail": "You have advantage on saving throws against being frightened.",
+    "page": 4,
+    "source": "SRD 5.1"
+  },
+  {
+    "race": "Halfling",
+    "name": "Halfling Nimbleness",
+    "economy": "Movement",
+    "detail": "You can move through the space of any creature that is of a size larger than yours.",
+    "page": 5,
+    "source": "SRD 5.1"
+  },
+  {
+    "race": "Lightfoot",
+    "name": "Naturally Stealthy",
+    "economy": "Movement",
+    "detail": "You can attempt to hide even when you are obscured only by a creature that is at least one size larger than you.",
+    "page": 5,
+    "source": "SRD 5.1"
+  },
+  {
+    "race": "Dragonborn",
+    "name": "Breath Weapon",
+    "economy": "Action",
+    "detail": "You can use your action to exhale destructive energy. Your draconic ancestry determines the size, shape, and damage type of the exhalation. When you use your breath weapon, each creature in the area of the exhalation must make a saving throw, the type of which is determined by your draconic ancestry. The DC for this saving throw equals 8 + your Constitution modifier + your proficiency bonus. A creature takes 2d6 damage on a failed save, and half as much damage on a successful one. The damage increases to 3d6 at 6th level, 4d6 at 11th level, and 5d6 at 16th level. After you use your breath weapon, you can’t use it again until you complete a short or long rest.",
+    "page": 5,
+    "source": "SRD 5.1"
+  },
+  {
+    "race": "Gnome",
+    "name": "Darkvision",
+    "economy": "Passive",
+    "detail": "Accustomed to life underground, you have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can’t discern color in darkness, only shades of gray.",
+    "page": 6,
+    "source": "SRD 5.1"
+  },
+  {
+    "race": "Gnome",
+    "name": "Gnome Cunning",
+    "economy": "Passive",
+    "detail": "You have advantage on all Intelligence, Wisdom, and Charisma saving throws against magic.",
+    "page": 6,
+    "source": "SRD 5.1"
+  },
+  {
+    "race": "Rock Gnome",
+    "name": "Artificer’s Lore",
+    "economy": "Passive",
+    "detail": "Whenever you make an Intelligence (History) check related to magic items, alchemical objects, or technological devices, you can add twice your proficiency bonus, instead of any proficiency bonus you normally apply.",
+    "page": 6,
+    "source": "SRD 5.1"
+  },
+  {
+    "race": "Rock Gnome",
+    "name": "Tinker",
+    "economy": "Passive",
+    "detail": "You have proficiency with artisan’s tools (tinker’s tools). Using those tools, you can spend 1 hour and 10 gp worth of materials to construct a Tiny clockwork device (AC 5, 1 hp). The device ceases to function after 24 hours (unless you spend 1 hour repairing it to keep the device functioning), or when you use your action to dismantle it; at that time, you can reclaim the materials used to create it. You can have up to three such devices active at a time. When you create a device, choose one of the following options:",
+    "page": 6,
+    "source": "SRD 5.1"
+  },
+  {
+    "race": "Half-Elf",
+    "name": "Darkvision",
+    "economy": "Passive",
+    "detail": "Thanks to your elf blood, you have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can’t discern color in darkness, only shades of gray.",
+    "page": 7,
+    "source": "SRD 5.1"
+  },
+  {
+    "race": "Half-Elf",
+    "name": "Fey Ancestry",
+    "economy": "Passive",
+    "detail": "You have advantage on saving throws against being charmed, and magic can’t put you to sleep.",
+    "page": 7,
+    "source": "SRD 5.1"
+  },
+  {
+    "race": "Half-Elf",
+    "name": "Skill Versatility",
+    "economy": "Passive",
+    "detail": "You gain proficiency in two skills of your choice.",
+    "page": 7,
+    "source": "SRD 5.1"
+  },
+  {
+    "race": "Half-Orc",
+    "name": "Darkvision",
+    "economy": "Passive",
+    "detail": "Thanks to your orc blood, you have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can’t discern color in darkness, only shades of gray.",
+    "page": 7,
+    "source": "SRD 5.1"
+  },
+  {
+    "race": "Half-Orc",
+    "name": "Menacing",
+    "economy": "Passive",
+    "detail": "You gain proficiency in the Intimidation skill.",
+    "page": 7,
+    "source": "SRD 5.1"
+  },
+  {
+    "race": "Half-Orc",
+    "name": "Relentless Endurance",
+    "economy": "Passive",
+    "detail": "When you are reduced to 0 hit points but not killed outright, you can drop to 1 hit point instead. You can’t use this feature again until you finish a long rest.",
+    "page": 7,
+    "source": "SRD 5.1"
+  },
+  {
+    "race": "Half-Orc",
+    "name": "Savage Attacks",
+    "economy": "Passive",
+    "detail": "When you score a critical hit with a melee weapon attack, you can roll one of the weapon’s damage dice one additional time and add it to the extra damage of the critical hit.",
+    "page": 7,
+    "source": "SRD 5.1"
+  },
+  {
+    "race": "Tiefling",
+    "name": "Darkvision",
+    "economy": "Passive",
+    "detail": "Thanks to your infernal heritage, you have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can’t discern color in darkness, only shades of gray.",
+    "page": 7,
+    "source": "SRD 5.1"
+  },
+  {
+    "race": "Tiefling",
+    "name": "Hellish Resistance",
+    "economy": "Passive",
+    "detail": "You have resistance to fire damage.",
+    "page": 7,
+    "source": "SRD 5.1"
+  },
+  {
+    "race": "Tiefling",
+    "name": "Infernal Legacy",
+    "economy": "Unclassified",
+    "detail": "You know the thaumaturgy cantrip. When you reach 3rd level, you can cast the hellish rebuke spell as a 2nd-­‐‑level spell once with this trait and regain the ability to do so when you finish a long rest. When you reach 5th level, you can cast the darkness spell once with this trait and regain the ability to do so when you finish a long rest. Charisma is your spellcasting ability for these spells.",
+    "page": 7,
+    "source": "SRD 5.1"
+  }
+]

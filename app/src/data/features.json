@@ -1,0 +1,1186 @@
+{
+  "Barbarian": [
+    {
+      "level": 1,
+      "name": "Rage",
+      "scope": "class"
+    },
+    {
+      "level": 1,
+      "name": "Unarmored Defense",
+      "scope": "class"
+    },
+    {
+      "level": 1,
+      "name": "Weapon Mastery",
+      "scope": "class"
+    },
+    {
+      "level": 2,
+      "name": "Danger Sense",
+      "scope": "class"
+    },
+    {
+      "level": 2,
+      "name": "Reckless Attack",
+      "scope": "class"
+    },
+    {
+      "level": 3,
+      "name": "Barbarian Subclass",
+      "scope": "class"
+    },
+    {
+      "level": 3,
+      "name": "Primal Knowledge",
+      "scope": "class"
+    },
+    {
+      "level": 4,
+      "name": "Ability Score Improvement",
+      "scope": "class"
+    },
+    {
+      "level": 5,
+      "name": "Extra Attack",
+      "scope": "class"
+    },
+    {
+      "level": 5,
+      "name": "Fast Movement",
+      "scope": "class"
+    },
+    {
+      "level": 7,
+      "name": "Feral Instinct",
+      "scope": "class"
+    },
+    {
+      "level": 7,
+      "name": "Instinctive Pounce",
+      "scope": "class"
+    },
+    {
+      "level": 9,
+      "name": "Brutal Strike",
+      "scope": "class"
+    },
+    {
+      "level": 11,
+      "name": "Relentless Rage",
+      "scope": "class"
+    },
+    {
+      "level": 13,
+      "name": "Improved Brutal Strike",
+      "scope": "class"
+    },
+    {
+      "level": 15,
+      "name": "Persistent Rage",
+      "scope": "class"
+    },
+    {
+      "level": 17,
+      "name": "Improved Brutal Strike",
+      "scope": "class"
+    },
+    {
+      "level": 18,
+      "name": "Indomitable Might",
+      "scope": "class"
+    },
+    {
+      "level": 19,
+      "name": "Epic Boon",
+      "scope": "class"
+    },
+    {
+      "level": 20,
+      "name": "Primal Champion",
+      "scope": "class"
+    },
+    {
+      "level": 3,
+      "name": "Frenzy",
+      "scope": "subclass"
+    },
+    {
+      "level": 6,
+      "name": "Mindless Rage",
+      "scope": "subclass"
+    },
+    {
+      "level": 10,
+      "name": "Retaliation",
+      "scope": "subclass"
+    },
+    {
+      "level": 14,
+      "name": "Intimidating Presence",
+      "scope": "subclass"
+    }
+  ],
+  "Bard": [
+    {
+      "level": 1,
+      "name": "Bardic Inspiration",
+      "scope": "class"
+    },
+    {
+      "level": 1,
+      "name": "Spellcasting",
+      "scope": "class"
+    },
+    {
+      "level": 2,
+      "name": "Expertise",
+      "scope": "class"
+    },
+    {
+      "level": 2,
+      "name": "Jack of All Trades",
+      "scope": "class"
+    },
+    {
+      "level": 3,
+      "name": "Bard Subclass",
+      "scope": "class"
+    },
+    {
+      "level": 4,
+      "name": "Ability Score Improvement",
+      "scope": "class"
+    },
+    {
+      "level": 5,
+      "name": "Font of Inspiration",
+      "scope": "class"
+    },
+    {
+      "level": 7,
+      "name": "Countercharm",
+      "scope": "class"
+    },
+    {
+      "level": 10,
+      "name": "Magical Secrets",
+      "scope": "class"
+    },
+    {
+      "level": 18,
+      "name": "Superior Inspiration",
+      "scope": "class"
+    },
+    {
+      "level": 19,
+      "name": "Epic Boon",
+      "scope": "class"
+    },
+    {
+      "level": 20,
+      "name": "Words of Creation",
+      "scope": "class"
+    },
+    {
+      "level": 3,
+      "name": "Bonus Proficiencies",
+      "scope": "subclass"
+    },
+    {
+      "level": 3,
+      "name": "Cutting Words",
+      "scope": "subclass"
+    },
+    {
+      "level": 6,
+      "name": "Magical Discoveries",
+      "scope": "subclass"
+    },
+    {
+      "level": 14,
+      "name": "Peerless Skill",
+      "scope": "subclass"
+    }
+  ],
+  "Cleric": [
+    {
+      "level": 1,
+      "name": "Spellcasting",
+      "scope": "class"
+    },
+    {
+      "level": 1,
+      "name": "Divine Order",
+      "scope": "class"
+    },
+    {
+      "level": 2,
+      "name": "Channel Divinity",
+      "scope": "class"
+    },
+    {
+      "level": 3,
+      "name": "Cleric Subclass",
+      "scope": "class"
+    },
+    {
+      "level": 4,
+      "name": "Ability Score Improvement",
+      "scope": "class"
+    },
+    {
+      "level": 5,
+      "name": "Sear Undead",
+      "scope": "class"
+    },
+    {
+      "level": 7,
+      "name": "Blessed Strikes",
+      "scope": "class"
+    },
+    {
+      "level": 10,
+      "name": "Divine Intervention",
+      "scope": "class"
+    },
+    {
+      "level": 14,
+      "name": "Improved Blessed Strikes",
+      "scope": "class"
+    },
+    {
+      "level": 19,
+      "name": "Epic Boon",
+      "scope": "class"
+    },
+    {
+      "level": 20,
+      "name": "Greater Divine Intervention",
+      "scope": "class"
+    },
+    {
+      "level": 3,
+      "name": "Disciple of Life",
+      "scope": "subclass"
+    },
+    {
+      "level": 3,
+      "name": "Life Domain Spells",
+      "scope": "subclass"
+    },
+    {
+      "level": 3,
+      "name": "Preserve Life",
+      "scope": "subclass"
+    },
+    {
+      "level": 6,
+      "name": "Blessed Healer",
+      "scope": "subclass"
+    },
+    {
+      "level": 17,
+      "name": "Supreme Healing",
+      "scope": "subclass"
+    }
+  ],
+  "Druid": [
+    {
+      "level": 1,
+      "name": "Spellcasting",
+      "scope": "class"
+    },
+    {
+      "level": 1,
+      "name": "Druidic",
+      "scope": "class"
+    },
+    {
+      "level": 1,
+      "name": "Primal Order",
+      "scope": "class"
+    },
+    {
+      "level": 2,
+      "name": "Wild Shape",
+      "scope": "class"
+    },
+    {
+      "level": 2,
+      "name": "Wild Companion",
+      "scope": "class"
+    },
+    {
+      "level": 3,
+      "name": "Druid Subclass",
+      "scope": "class"
+    },
+    {
+      "level": 4,
+      "name": "Ability Score Improvement",
+      "scope": "class"
+    },
+    {
+      "level": 5,
+      "name": "Wild Resurgence",
+      "scope": "class"
+    },
+    {
+      "level": 7,
+      "name": "Elemental Fury",
+      "scope": "class"
+    },
+    {
+      "level": 15,
+      "name": "Improved Elemental Fury",
+      "scope": "class"
+    },
+    {
+      "level": 18,
+      "name": "Beast Spells",
+      "scope": "class"
+    },
+    {
+      "level": 19,
+      "name": "Epic Boon",
+      "scope": "class"
+    },
+    {
+      "level": 20,
+      "name": "Archdruid",
+      "scope": "class"
+    },
+    {
+      "level": 3,
+      "name": "Circle of the Land Spells",
+      "scope": "subclass"
+    },
+    {
+      "level": 3,
+      "name": "Land’s Aid",
+      "scope": "subclass"
+    },
+    {
+      "level": 6,
+      "name": "Natural Recovery",
+      "scope": "subclass"
+    },
+    {
+      "level": 10,
+      "name": "Nature’s Ward",
+      "scope": "subclass"
+    },
+    {
+      "level": 14,
+      "name": "Nature’s Sanctuary",
+      "scope": "subclass"
+    }
+  ],
+  "Fighter": [
+    {
+      "level": 1,
+      "name": "Fighting Style",
+      "scope": "class"
+    },
+    {
+      "level": 1,
+      "name": "Second Wind",
+      "scope": "class"
+    },
+    {
+      "level": 1,
+      "name": "Weapon Mastery",
+      "scope": "class"
+    },
+    {
+      "level": 2,
+      "name": "Action Surge",
+      "scope": "class"
+    },
+    {
+      "level": 2,
+      "name": "Tactical Mind",
+      "scope": "class"
+    },
+    {
+      "level": 3,
+      "name": "Fighter Subclass",
+      "scope": "class"
+    },
+    {
+      "level": 4,
+      "name": "Ability Score Improvement",
+      "scope": "class"
+    },
+    {
+      "level": 5,
+      "name": "Extra Attack",
+      "scope": "class"
+    },
+    {
+      "level": 5,
+      "name": "Tactical Shift",
+      "scope": "class"
+    },
+    {
+      "level": 9,
+      "name": "Indomitable",
+      "scope": "class"
+    },
+    {
+      "level": 9,
+      "name": "Tactical Master",
+      "scope": "class"
+    },
+    {
+      "level": 11,
+      "name": "Two Extra Attacks",
+      "scope": "class"
+    },
+    {
+      "level": 13,
+      "name": "Studied Attacks",
+      "scope": "class"
+    },
+    {
+      "level": 19,
+      "name": "Epic Boon",
+      "scope": "class"
+    },
+    {
+      "level": 20,
+      "name": "Three Extra Attacks",
+      "scope": "class"
+    },
+    {
+      "level": 3,
+      "name": "Improved Critical",
+      "scope": "subclass"
+    },
+    {
+      "level": 3,
+      "name": "Remarkable Athlete",
+      "scope": "subclass"
+    },
+    {
+      "level": 7,
+      "name": "Additional Fighting Style",
+      "scope": "subclass"
+    },
+    {
+      "level": 10,
+      "name": "Heroic Warrior",
+      "scope": "subclass"
+    },
+    {
+      "level": 15,
+      "name": "Superior Critical",
+      "scope": "subclass"
+    },
+    {
+      "level": 18,
+      "name": "Survivor",
+      "scope": "subclass"
+    }
+  ],
+  "Monk": [
+    {
+      "level": 1,
+      "name": "Martial Arts",
+      "scope": "class"
+    },
+    {
+      "level": 1,
+      "name": "Unarmored Defense",
+      "scope": "class"
+    },
+    {
+      "level": 2,
+      "name": "Monk’s Focus",
+      "scope": "class"
+    },
+    {
+      "level": 2,
+      "name": "Unarmored Movement",
+      "scope": "class"
+    },
+    {
+      "level": 2,
+      "name": "Uncanny Metabolism",
+      "scope": "class"
+    },
+    {
+      "level": 3,
+      "name": "Deflect Attacks",
+      "scope": "class"
+    },
+    {
+      "level": 3,
+      "name": "Monk Subclass",
+      "scope": "class"
+    },
+    {
+      "level": 4,
+      "name": "Ability Score Improvement",
+      "scope": "class"
+    },
+    {
+      "level": 4,
+      "name": "Slow Fall",
+      "scope": "class"
+    },
+    {
+      "level": 5,
+      "name": "Extra Attack",
+      "scope": "class"
+    },
+    {
+      "level": 5,
+      "name": "Stunning Strike",
+      "scope": "class"
+    },
+    {
+      "level": 6,
+      "name": "Empowered Strikes",
+      "scope": "class"
+    },
+    {
+      "level": 7,
+      "name": "Evasion",
+      "scope": "class"
+    },
+    {
+      "level": 9,
+      "name": "Acrobatic Movement",
+      "scope": "class"
+    },
+    {
+      "level": 10,
+      "name": "Heightened Focus",
+      "scope": "class"
+    },
+    {
+      "level": 10,
+      "name": "Self-Restoration",
+      "scope": "class"
+    },
+    {
+      "level": 13,
+      "name": "Deflect Energy",
+      "scope": "class"
+    },
+    {
+      "level": 14,
+      "name": "Disciplined Survivor",
+      "scope": "class"
+    },
+    {
+      "level": 15,
+      "name": "Perfect Focus",
+      "scope": "class"
+    },
+    {
+      "level": 18,
+      "name": "Superior Defense",
+      "scope": "class"
+    },
+    {
+      "level": 19,
+      "name": "Epic Boon",
+      "scope": "class"
+    },
+    {
+      "level": 20,
+      "name": "Body and Mind",
+      "scope": "class"
+    },
+    {
+      "level": 3,
+      "name": "Open Hand Technique",
+      "scope": "subclass"
+    },
+    {
+      "level": 6,
+      "name": "Wholeness of Body",
+      "scope": "subclass"
+    },
+    {
+      "level": 11,
+      "name": "Fleet Step",
+      "scope": "subclass"
+    },
+    {
+      "level": 17,
+      "name": "Quivering Palm",
+      "scope": "subclass"
+    }
+  ],
+  "Paladin": [
+    {
+      "level": 1,
+      "name": "Lay On Hands",
+      "scope": "class"
+    },
+    {
+      "level": 1,
+      "name": "Spellcasting",
+      "scope": "class"
+    },
+    {
+      "level": 1,
+      "name": "Weapon Mastery",
+      "scope": "class"
+    },
+    {
+      "level": 2,
+      "name": "Fighting Style",
+      "scope": "class"
+    },
+    {
+      "level": 2,
+      "name": "Paladin’s Smite",
+      "scope": "class"
+    },
+    {
+      "level": 3,
+      "name": "Channel Divinity",
+      "scope": "class"
+    },
+    {
+      "level": 3,
+      "name": "Paladin Subclass",
+      "scope": "class"
+    },
+    {
+      "level": 4,
+      "name": "Ability Score Improvement",
+      "scope": "class"
+    },
+    {
+      "level": 5,
+      "name": "Extra Attack",
+      "scope": "class"
+    },
+    {
+      "level": 5,
+      "name": "Faithful Steed",
+      "scope": "class"
+    },
+    {
+      "level": 6,
+      "name": "Aura of Protection",
+      "scope": "class"
+    },
+    {
+      "level": 9,
+      "name": "Abjure Foes",
+      "scope": "class"
+    },
+    {
+      "level": 10,
+      "name": "Aura of Courage",
+      "scope": "class"
+    },
+    {
+      "level": 11,
+      "name": "Radiant Strikes",
+      "scope": "class"
+    },
+    {
+      "level": 14,
+      "name": "Restoring Touch",
+      "scope": "class"
+    },
+    {
+      "level": 18,
+      "name": "Aura Expansion",
+      "scope": "class"
+    },
+    {
+      "level": 19,
+      "name": "Epic Boon",
+      "scope": "class"
+    },
+    {
+      "level": 3,
+      "name": "Oath of Devotion Spells",
+      "scope": "subclass"
+    },
+    {
+      "level": 3,
+      "name": "Sacred Weapon",
+      "scope": "subclass"
+    },
+    {
+      "level": 7,
+      "name": "Aura of Devotion",
+      "scope": "subclass"
+    },
+    {
+      "level": 15,
+      "name": "Smite of Protection",
+      "scope": "subclass"
+    },
+    {
+      "level": 20,
+      "name": "Holy Nimbus",
+      "scope": "subclass"
+    }
+  ],
+  "Ranger": [
+    {
+      "level": 1,
+      "name": "Spellcasting",
+      "scope": "class"
+    },
+    {
+      "level": 1,
+      "name": "Favored Enemy",
+      "scope": "class"
+    },
+    {
+      "level": 1,
+      "name": "Weapon Mastery",
+      "scope": "class"
+    },
+    {
+      "level": 2,
+      "name": "Deft Explorer",
+      "scope": "class"
+    },
+    {
+      "level": 2,
+      "name": "Fighting Style",
+      "scope": "class"
+    },
+    {
+      "level": 3,
+      "name": "Ranger Subclass",
+      "scope": "class"
+    },
+    {
+      "level": 4,
+      "name": "Ability Score Improvement",
+      "scope": "class"
+    },
+    {
+      "level": 5,
+      "name": "Extra Attack",
+      "scope": "class"
+    },
+    {
+      "level": 6,
+      "name": "Roving",
+      "scope": "class"
+    },
+    {
+      "level": 9,
+      "name": "Expertise",
+      "scope": "class"
+    },
+    {
+      "level": 10,
+      "name": "Tireless",
+      "scope": "class"
+    },
+    {
+      "level": 13,
+      "name": "Relentless Hunter",
+      "scope": "class"
+    },
+    {
+      "level": 14,
+      "name": "Nature’s Veil",
+      "scope": "class"
+    },
+    {
+      "level": 17,
+      "name": "Precise Hunter",
+      "scope": "class"
+    },
+    {
+      "level": 18,
+      "name": "Feral Senses",
+      "scope": "class"
+    },
+    {
+      "level": 19,
+      "name": "Epic Boon",
+      "scope": "class"
+    },
+    {
+      "level": 20,
+      "name": "Foe Slayer",
+      "scope": "class"
+    },
+    {
+      "level": 3,
+      "name": "Hunter’s Lore",
+      "scope": "subclass"
+    },
+    {
+      "level": 3,
+      "name": "Hunter’s Prey",
+      "scope": "subclass"
+    },
+    {
+      "level": 7,
+      "name": "Defensive Tactics",
+      "scope": "subclass"
+    },
+    {
+      "level": 11,
+      "name": "Superior Hunter’s Prey",
+      "scope": "subclass"
+    },
+    {
+      "level": 15,
+      "name": "Superior Hunter’s Defense",
+      "scope": "subclass"
+    }
+  ],
+  "Rogue": [
+    {
+      "level": 1,
+      "name": "Expertise",
+      "scope": "class"
+    },
+    {
+      "level": 1,
+      "name": "Sneak Attack",
+      "scope": "class"
+    },
+    {
+      "level": 1,
+      "name": "Thieves’ Cant",
+      "scope": "class"
+    },
+    {
+      "level": 1,
+      "name": "Weapon Mastery",
+      "scope": "class"
+    },
+    {
+      "level": 2,
+      "name": "Cunning Action",
+      "scope": "class"
+    },
+    {
+      "level": 3,
+      "name": "Rogue Subclass",
+      "scope": "class"
+    },
+    {
+      "level": 3,
+      "name": "Steady Aim",
+      "scope": "class"
+    },
+    {
+      "level": 4,
+      "name": "Ability Score Improvement",
+      "scope": "class"
+    },
+    {
+      "level": 5,
+      "name": "Cunning Strike",
+      "scope": "class"
+    },
+    {
+      "level": 5,
+      "name": "Uncanny Dodge",
+      "scope": "class"
+    },
+    {
+      "level": 7,
+      "name": "Evasion",
+      "scope": "class"
+    },
+    {
+      "level": 7,
+      "name": "Reliable Talent",
+      "scope": "class"
+    },
+    {
+      "level": 11,
+      "name": "Improved Cunning Strike",
+      "scope": "class"
+    },
+    {
+      "level": 14,
+      "name": "Devious Strikes",
+      "scope": "class"
+    },
+    {
+      "level": 15,
+      "name": "Slippery Mind",
+      "scope": "class"
+    },
+    {
+      "level": 18,
+      "name": "Elusive",
+      "scope": "class"
+    },
+    {
+      "level": 19,
+      "name": "Epic Boon",
+      "scope": "class"
+    },
+    {
+      "level": 20,
+      "name": "Stroke of Luck",
+      "scope": "class"
+    },
+    {
+      "level": 3,
+      "name": "Fast Hands",
+      "scope": "subclass"
+    },
+    {
+      "level": 3,
+      "name": "Second-Story Work",
+      "scope": "subclass"
+    },
+    {
+      "level": 9,
+      "name": "Supreme Sneak",
+      "scope": "subclass"
+    },
+    {
+      "level": 13,
+      "name": "Use Magic Device",
+      "scope": "subclass"
+    },
+    {
+      "level": 17,
+      "name": "Thief’s Reflexes",
+      "scope": "subclass"
+    }
+  ],
+  "Sorcerer": [
+    {
+      "level": 1,
+      "name": "Spellcasting",
+      "scope": "class"
+    },
+    {
+      "level": 1,
+      "name": "Innate Sorcery",
+      "scope": "class"
+    },
+    {
+      "level": 2,
+      "name": "Font of Magic",
+      "scope": "class"
+    },
+    {
+      "level": 2,
+      "name": "Metamagic",
+      "scope": "class"
+    },
+    {
+      "level": 3,
+      "name": "Sorcerer Subclass",
+      "scope": "class"
+    },
+    {
+      "level": 4,
+      "name": "Ability Score Improvement",
+      "scope": "class"
+    },
+    {
+      "level": 5,
+      "name": "Sorcerous Restoration",
+      "scope": "class"
+    },
+    {
+      "level": 7,
+      "name": "Sorcery Incarnate",
+      "scope": "class"
+    },
+    {
+      "level": 19,
+      "name": "Epic Boon",
+      "scope": "class"
+    },
+    {
+      "level": 20,
+      "name": "Arcane Apotheosis",
+      "scope": "class"
+    },
+    {
+      "level": 3,
+      "name": "Draconic Resilience",
+      "scope": "subclass"
+    },
+    {
+      "level": 3,
+      "name": "Draconic Spells",
+      "scope": "subclass"
+    },
+    {
+      "level": 6,
+      "name": "Elemental Affinity",
+      "scope": "subclass"
+    },
+    {
+      "level": 14,
+      "name": "Dragon Wings",
+      "scope": "subclass"
+    },
+    {
+      "level": 18,
+      "name": "Dragon Companion",
+      "scope": "subclass"
+    }
+  ],
+  "Warlock": [
+    {
+      "level": 1,
+      "name": "Eldritch Invocations",
+      "scope": "class"
+    },
+    {
+      "level": 1,
+      "name": "Pact Magic",
+      "scope": "class"
+    },
+    {
+      "level": 2,
+      "name": "Magical Cunning",
+      "scope": "class"
+    },
+    {
+      "level": 3,
+      "name": "Warlock Subclass",
+      "scope": "class"
+    },
+    {
+      "level": 4,
+      "name": "Ability Score Improvement",
+      "scope": "class"
+    },
+    {
+      "level": 9,
+      "name": "Contact Patron",
+      "scope": "class"
+    },
+    {
+      "level": 11,
+      "name": "Mystic Arcanum",
+      "scope": "class"
+    },
+    {
+      "level": 19,
+      "name": "Epic Boon",
+      "scope": "class"
+    },
+    {
+      "level": 20,
+      "name": "Eldritch Master",
+      "scope": "class"
+    },
+    {
+      "level": 3,
+      "name": "Dark One’s Blessing",
+      "scope": "subclass"
+    },
+    {
+      "level": 3,
+      "name": "Fiend Spells",
+      "scope": "subclass"
+    },
+    {
+      "level": 6,
+      "name": "Dark One’s Own Luck",
+      "scope": "subclass"
+    },
+    {
+      "level": 10,
+      "name": "Fiendish Resilience",
+      "scope": "subclass"
+    },
+    {
+      "level": 14,
+      "name": "Hurl Through Hell",
+      "scope": "subclass"
+    }
+  ],
+  "Wizard": [
+    {
+      "level": 1,
+      "name": "Spellcasting",
+      "scope": "class"
+    },
+    {
+      "level": 1,
+      "name": "Ritual Adept",
+      "scope": "class"
+    },
+    {
+      "level": 1,
+      "name": "Arcane Recovery",
+      "scope": "class"
+    },
+    {
+      "level": 2,
+      "name": "Scholar",
+      "scope": "class"
+    },
+    {
+      "level": 3,
+      "name": "Wizard Subclass",
+      "scope": "class"
+    },
+    {
+      "level": 4,
+      "name": "Ability Score Improvement",
+      "scope": "class"
+    },
+    {
+      "level": 5,
+      "name": "Memorize Spell",
+      "scope": "class"
+    },
+    {
+      "level": 18,
+      "name": "Spell Mastery",
+      "scope": "class"
+    },
+    {
+      "level": 19,
+      "name": "Epic Boon",
+      "scope": "class"
+    },
+    {
+      "level": 20,
+      "name": "Signature Spells",
+      "scope": "class"
+    },
+    {
+      "level": 3,
+      "name": "Evocation Savant",
+      "scope": "subclass"
+    },
+    {
+      "level": 3,
+      "name": "Potent Cantrip",
+      "scope": "subclass"
+    },
+    {
+      "level": 6,
+      "name": "Sculpt Spells",
+      "scope": "subclass"
+    },
+    {
+      "level": 10,
+      "name": "Empowered Evocation",
+      "scope": "subclass"
+    },
+    {
+      "level": 14,
+      "name": "Overchannel",
+      "scope": "subclass"
+    }
+  ]
+}

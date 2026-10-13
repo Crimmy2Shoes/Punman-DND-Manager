@@ -1,0 +1,68 @@
+// Original summaries of TCE spells directly granted by the installed subclasses.
+// Summoned creature stat blocks remain in the linked reference.
+const rows: [string, number, string, string, string[], string, string][] = [
+  [
+    'Mind Sliver',
+    0,
+    'Enchantment',
+    'V',
+    ['Sorcerer', 'Warlock', 'Wizard'],
+    'https://whitelabel.worldanvil.com/block/1573058',
+    'Visible creature within 60 feet: Intelligence save or 1d6 psychic and subtract d4 from its next save before your next turn ends. Damage becomes 2d6/3d6/4d6 at character levels 5/11/17.',
+  ],
+  [
+    'Summon Fey',
+    3,
+    'Conjuration',
+    'V, S, M (a gilded flower worth at least 300 gp)',
+    ['Druid', 'Ranger', 'Warlock', 'Wizard'],
+    'https://www.worldanvil.com/block/1296454',
+    'Summon Fey Spirit to a visible empty space within 90 feet. Choose Fuming, Mirthful or Tricksy, determining its Fey Step effect. It shares your initiative and acts after you, obeying verbal commands without your action; otherwise Dodges and avoids danger. Disappears at 0 HP or spell end. Level 4+ slots scale its linked stat block and attacks.',
+  ],
+  [
+    'Summon Aberration',
+    4,
+    'Conjuration',
+    'V, S, M (a pickled tentacle and eyeball in a platinum-inlaid vial worth at least 400 gp)',
+    ['Warlock', 'Wizard'],
+    'https://www.worldanvil.com/block/1296495',
+    'Summon Aberrant Spirit to a visible empty space within 90 feet; choose Beholderkin, Slaad or Star Spawn. Shares your initiative and acts after you; verbal commands need no action. Otherwise Dodges/avoids danger. Disappears at 0 HP or spell end. Higher slots scale its linked stat block, including attack count.',
+  ],
+  [
+    'Summon Construct',
+    4,
+    'Conjuration',
+    'V, S, M (an ornate stone and metal lockbox worth at least 400 gp)',
+    ['Artificer', 'Wizard'],
+    'https://whitelabel.worldanvil.com/block/646895',
+    'Summon Construct Spirit to a visible empty space within 90 feet; choose Clay, Metal or Stone. Shares your initiative and acts after you; verbal commands need no action. Otherwise Dodges/avoids danger. Disappears at 0 HP or spell end. Higher slots scale its linked stat block, including attack count.',
+  ],
+  [
+    'Summon Elemental',
+    4,
+    'Conjuration',
+    'V, S, M (air, a pebble, ash and water in a gold-inlaid vial worth at least 400 gp)',
+    ['Druid', 'Ranger', 'Wizard'],
+    'https://www.worldanvil.com/block/1654690',
+    'Summon Elemental Spirit to a visible empty space within 90 feet; choose Air, Earth, Fire or Water. Shares your initiative and acts after you; verbal commands need no action. Otherwise Dodges/avoids danger. Disappears at 0 HP or spell end. Higher slots scale its linked stat block. The Fathomless expanded-list grant permits Water only.',
+  ],
+]
+export const EXPANSION_SPELL_DEFINITIONS = rows.map(
+  ([name, level, school, components, classes, url, description]) => ({
+    name,
+    level,
+    school,
+    castingTime: '1 action',
+    range: level === 0 ? '60 feet' : '90 feet',
+    components,
+    materials: /\((.+)\)/.exec(components)?.[1] ?? '',
+    duration: level === 0 ? '1 round' : 'Concentration, up to 1 hour',
+    concentration: level > 0,
+    ritual: false,
+    classes,
+    url,
+    description,
+    source: 'TCE · 2014 rules · mechanical summary',
+    page: 0,
+  }),
+)

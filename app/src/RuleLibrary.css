@@ -1,0 +1,88 @@
+﻿.spell-metadata {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px 24px;
+  margin: 20px 0;
+}
+.spell-metadata div {
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--line);
+}
+.spell-metadata dt {
+  font-size: 12px;
+  color: var(--muted);
+  margin-bottom: 4px;
+}
+.spell-metadata dd {
+  margin: 0;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+.rules-coverage-stats {
+  display: flex;
+  gap: 24px;
+  margin: 4px 0 20px;
+  color: var(--muted);
+}
+.rules-coverage-stats strong {
+  color: var(--ink);
+  margin-right: 3px;
+}
+.feature-choice-group {
+  border-bottom: 1px solid var(--line);
+  padding: 12px 0;
+}
+.feature-choice-group > summary {
+  cursor: pointer;
+  font-weight: 600;
+}
+.feature-choice-group > summary > span {
+  float: right;
+  font-weight: 400;
+  color: var(--muted);
+}
+.feature-choice-options {
+  max-height: 360px;
+  overflow: auto;
+  margin-top: 12px;
+  padding: 0 10px 0 2px;
+}
+.feature-choice-option {
+  padding: 12px 0;
+  border-bottom: 1px solid var(--line);
+}
+.feature-choice-option .manager-check {
+  align-items: flex-start;
+}
+.feature-choice-option small {
+  display: block;
+  margin-top: 4px;
+  color: var(--muted);
+}
+.feature-choice-option > details {
+  margin: 8px 0 0 24px;
+  font-size: 13px;
+}
+.feature-choice-option > details summary {
+  cursor: pointer;
+  color: var(--muted);
+}
+.casting-profile {
+  padding: 12px 0;
+  border-bottom: 1px solid var(--line);
+}
+.casting-counts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 18px;
+  color: var(--muted);
+  font-size: 13px;
+  margin: 8px 0;
+}
+.casting-profile details {
+  font-size: 13px;
+  margin: 12px 0;
+}
+.casting-profile summary {
+  cursor: pointer;
+}

@@ -1,0 +1,322 @@
+[
+  {
+    "name": "Agonizing Blast",
+    "detail": "Prerequisite: eldritch blast cantrip When you cast eldritch blast , add your Charisma modifier to the damage it deals on a hit.",
+    "page": 48,
+    "source": "SRD 5.1",
+    "level": 2,
+    "pact": "",
+    "eldritchBlast": true,
+    "prerequisite": "eldritch blast cantrip"
+  },
+  {
+    "name": "Armor of Shadows",
+    "detail": "You can cast mage armor on yourself at will, without expending a spell slot or material components.",
+    "page": 48,
+    "source": "SRD 5.1",
+    "level": 2,
+    "pact": "",
+    "eldritchBlast": false,
+    "prerequisite": ""
+  },
+  {
+    "name": "Ascendant Step",
+    "detail": "Prerequisite: 9th level You can cast levitate on yourself at will, without expending a spell slot or material components.",
+    "page": 48,
+    "source": "SRD 5.1",
+    "level": 9,
+    "pact": "",
+    "eldritchBlast": false,
+    "prerequisite": "9th level"
+  },
+  {
+    "name": "Beast Speech",
+    "detail": "You can cast speak with animals at will, without expending a spell slot.",
+    "page": 48,
+    "source": "SRD 5.1",
+    "level": 2,
+    "pact": "",
+    "eldritchBlast": false,
+    "prerequisite": ""
+  },
+  {
+    "name": "Beguiling Influence",
+    "detail": "You gain proficiency in the Deception and Persuasion skills.",
+    "page": 48,
+    "source": "SRD 5.1",
+    "level": 2,
+    "pact": "",
+    "eldritchBlast": false,
+    "prerequisite": ""
+  },
+  {
+    "name": "Bewitching Whispers",
+    "detail": "Prerequisite: 7th level You can cast compulsion once using a warlock spell slot. You can’t do so again until you finish a long rest.",
+    "page": 48,
+    "source": "SRD 5.1",
+    "level": 7,
+    "pact": "",
+    "eldritchBlast": false,
+    "prerequisite": "7th level"
+  },
+  {
+    "name": "Book of Ancient Secrets",
+    "detail": "Prerequisite: Pact of the Tome feature You can now inscribe magical rituals in your Book of Shadows. Choose two 1st-‐‑level spells that have the ritual tag from any class’s spell list (the two needn’t be from the same list). The spells appear in the book and don’t count against the number of spells you know. With your Book of Shadows in hand, you can cast the chosen spells as rituals. You can’t cast the spells except as rituals, unless you’ve learned them by some other means. You can also cast a warlock spell you know as a ritual if it has the ritual tag. On your adventures, you can add other ritual spells to your Book of Shadows. When you find such a spell, you can add it to the book if the spell’s level is equal to or less than half your warlock level (rounded up) and if you can spare the time to transcribe the spell. For each level of the spell, the transcription process takes 2 hours and costs 50 gp for the rare inks needed to inscribe it.",
+    "page": 48,
+    "source": "SRD 5.1",
+    "level": 2,
+    "pact": "Tome",
+    "eldritchBlast": false,
+    "prerequisite": "Pact of the Tome feature"
+  },
+  {
+    "name": "Chains of Carceri",
+    "detail": "Prerequisite: 15th level, Pact of the Chain feature You can cast hold monster at will—targeting a celestial, fiend, or elemental—without expending a spell slot or material components. You must finish a long rest before you can use this invocation on the same creature again.",
+    "page": 49,
+    "source": "SRD 5.1",
+    "level": 15,
+    "pact": "Chain",
+    "eldritchBlast": false,
+    "prerequisite": "15th level, Pact of the Chain feature"
+  },
+  {
+    "name": "Devil’s Sight",
+    "detail": "You can see normally in darkness, both magical and nonmagical, to a distance of 120 feet.",
+    "page": 49,
+    "source": "SRD 5.1",
+    "level": 2,
+    "pact": "",
+    "eldritchBlast": false,
+    "prerequisite": ""
+  },
+  {
+    "name": "Dreadful Word",
+    "detail": "Prerequisite: 7th level You can cast confusion once using a warlock spell slot. You can’t do so again until you finish a long rest.",
+    "page": 49,
+    "source": "SRD 5.1",
+    "level": 7,
+    "pact": "",
+    "eldritchBlast": false,
+    "prerequisite": "7th level"
+  },
+  {
+    "name": "Eldritch Sight",
+    "detail": "You can cast detect magic at will, without expending a spell slot.",
+    "page": 49,
+    "source": "SRD 5.1",
+    "level": 2,
+    "pact": "",
+    "eldritchBlast": false,
+    "prerequisite": ""
+  },
+  {
+    "name": "Eldritch Spear",
+    "detail": "Prerequisite: eldritch blast cantrip When you cast eldritch blast , its range is 300 feet.",
+    "page": 49,
+    "source": "SRD 5.1",
+    "level": 2,
+    "pact": "",
+    "eldritchBlast": true,
+    "prerequisite": "eldritch blast cantrip"
+  },
+  {
+    "name": "Eyes of the Rune Keeper",
+    "detail": "You can read all writing.",
+    "page": 49,
+    "source": "SRD 5.1",
+    "level": 2,
+    "pact": "",
+    "eldritchBlast": false,
+    "prerequisite": ""
+  },
+  {
+    "name": "Fiendish Vigor",
+    "detail": "You can cast false life on yourself at will as a 1st-‐‑level spell, without expending a spell slot or material components.",
+    "page": 49,
+    "source": "SRD 5.1",
+    "level": 2,
+    "pact": "",
+    "eldritchBlast": false,
+    "prerequisite": ""
+  },
+  {
+    "name": "Gaze of Two Minds",
+    "detail": "You can use your action to touch a willing humanoid and perceive through its senses until the end of your next turn. As long as the creature is on the same plane of existence as you, you can use your action on subsequent turns to maintain this connection, extending the duration until the end of your next turn. While perceiving through the other creature’s senses, you benefit from any special senses possessed by that creature, and you are blinded and deafened to your own surroundings.",
+    "page": 49,
+    "source": "SRD 5.1",
+    "level": 2,
+    "pact": "",
+    "eldritchBlast": false,
+    "prerequisite": ""
+  },
+  {
+    "name": "Lifedrinker",
+    "detail": "Prerequisite: 12th level, Pact of the Blade feature When you hit a creature with your pact weapon, the creature takes extra necrotic damage equal to your Charisma modifier (minimum 1).",
+    "page": 49,
+    "source": "SRD 5.1",
+    "level": 12,
+    "pact": "Blade",
+    "eldritchBlast": false,
+    "prerequisite": "12th level, Pact of the Blade feature"
+  },
+  {
+    "name": "Mask of Many Faces",
+    "detail": "You can cast disguise self at will, without expending a spell slot.",
+    "page": 49,
+    "source": "SRD 5.1",
+    "level": 2,
+    "pact": "",
+    "eldritchBlast": false,
+    "prerequisite": ""
+  },
+  {
+    "name": "Master of Myriad Forms",
+    "detail": "Prerequisite: 15th level You can cast alter self at will, without expending a spell slot.",
+    "page": 49,
+    "source": "SRD 5.1",
+    "level": 15,
+    "pact": "",
+    "eldritchBlast": false,
+    "prerequisite": "15th level"
+  },
+  {
+    "name": "Minions of Chaos",
+    "detail": "Prerequisite: 9th level You can cast conjure elemental once using a warlock spell slot. You can’t do so again until you finish a long rest.",
+    "page": 49,
+    "source": "SRD 5.1",
+    "level": 9,
+    "pact": "",
+    "eldritchBlast": false,
+    "prerequisite": "9th level"
+  },
+  {
+    "name": "Mire the Mind",
+    "detail": "Prerequisite: 5th level You can cast slow once using a warlock spell slot. You can’t do so again until you finish a long rest.",
+    "page": 49,
+    "source": "SRD 5.1",
+    "level": 5,
+    "pact": "",
+    "eldritchBlast": false,
+    "prerequisite": "5th level"
+  },
+  {
+    "name": "Misty Visions",
+    "detail": "You can cast silent image at will, without expending a spell slot or material components.",
+    "page": 49,
+    "source": "SRD 5.1",
+    "level": 2,
+    "pact": "",
+    "eldritchBlast": false,
+    "prerequisite": ""
+  },
+  {
+    "name": "One with Shadows",
+    "detail": "Prerequisite: 5th level When you are in an area of dim light or darkness, you can use your action to become invisible until you move or take an action or a reaction.",
+    "page": 49,
+    "source": "SRD 5.1",
+    "level": 5,
+    "pact": "",
+    "eldritchBlast": false,
+    "prerequisite": "5th level"
+  },
+  {
+    "name": "Otherworldly Leap",
+    "detail": "Prerequisite: 9th level You can cast jump on yourself at will, without expending a spell slot or material components.",
+    "page": 49,
+    "source": "SRD 5.1",
+    "level": 9,
+    "pact": "",
+    "eldritchBlast": false,
+    "prerequisite": "9th level"
+  },
+  {
+    "name": "Repelling Blast",
+    "detail": "Prerequisite: eldritch blas t cantrip When you hit a creature with eldritch blast , you can push the creature up to 10 feet away from you in a straight line.",
+    "page": 49,
+    "source": "SRD 5.1",
+    "level": 2,
+    "pact": "",
+    "eldritchBlast": false,
+    "prerequisite": "eldritch blas t cantrip"
+  },
+  {
+    "name": "Sculptor of Flesh",
+    "detail": "Prerequisite: 7th level You can cast polymorph once using a warlock spell slot. You can’t do so again until you finish a long rest.",
+    "page": 50,
+    "source": "SRD 5.1",
+    "level": 7,
+    "pact": "",
+    "eldritchBlast": false,
+    "prerequisite": "7th level"
+  },
+  {
+    "name": "Sign of Ill Omen",
+    "detail": "Prerequisite: 5th level You can cast bestow curse once using a warlock spell slot. You can’t do so again until you finish a long rest.",
+    "page": 50,
+    "source": "SRD 5.1",
+    "level": 5,
+    "pact": "",
+    "eldritchBlast": false,
+    "prerequisite": "5th level"
+  },
+  {
+    "name": "Thief of Five Fates",
+    "detail": "You can cast bane once using a warlock spell slot. You can’t do so again until you finish a long rest.",
+    "page": 50,
+    "source": "SRD 5.1",
+    "level": 2,
+    "pact": "",
+    "eldritchBlast": false,
+    "prerequisite": ""
+  },
+  {
+    "name": "Thirsting Blade",
+    "detail": "Prerequisite: 5th level, Pact of the Blade feature You can attack with your pact weapon twice, instead of once, whenever you take the Attack action on your turn.",
+    "page": 50,
+    "source": "SRD 5.1",
+    "level": 5,
+    "pact": "Blade",
+    "eldritchBlast": false,
+    "prerequisite": "5th level, Pact of the Blade feature"
+  },
+  {
+    "name": "Visions of Distant Realms",
+    "detail": "Prerequisite: 15th level You can cast arcane eye at will, without expending a spell slot.",
+    "page": 50,
+    "source": "SRD 5.1",
+    "level": 15,
+    "pact": "",
+    "eldritchBlast": false,
+    "prerequisite": "15th level"
+  },
+  {
+    "name": "Voice of the Chain Master",
+    "detail": "Prerequisite: Pact of the Chain feature You can communicate telepathically with your familiar and perceive through your familiar’s senses as long as you are on the same plane of existence. Additionally, while perceiving through your familiar’s senses, you can also speak through your familiar in your own voice, even if your familiar is normally incapable of speech.",
+    "page": 50,
+    "source": "SRD 5.1",
+    "level": 2,
+    "pact": "Chain",
+    "eldritchBlast": false,
+    "prerequisite": "Pact of the Chain feature"
+  },
+  {
+    "name": "Whispers of the Grave",
+    "detail": "Prerequisite: 9th level You can cast speak with dead at will, without expending a spell slot.",
+    "page": 50,
+    "source": "SRD 5.1",
+    "level": 9,
+    "pact": "",
+    "eldritchBlast": false,
+    "prerequisite": "9th level"
+  },
+  {
+    "name": "Witch Sight",
+    "detail": "Prerequisite: 15th level You can see the true form of any shapechanger or creature concealed by illusion or transmutation magic while the creature is within 30 feet of you and within line of sight.",
+    "page": 50,
+    "source": "SRD 5.1",
+    "level": 15,
+    "pact": "",
+    "eldritchBlast": false,
+    "prerequisite": "15th level"
+  }
+]

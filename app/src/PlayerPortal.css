@@ -1,0 +1,36 @@
+.player-entry {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 3rem;
+  background: var(--page, #f3efe6);
+  color: var(--ink);
+}
+.player-entry-card {
+  width: min(100%, 480px);
+  padding: 2.5rem;
+  border: 1px solid var(--line, #dcd3c4);
+  border-radius: 22px;
+  background: var(--surface, #fffaf1);
+  box-shadow: 0 20px 65px #32211d14;
+}
+.player-entry-card .brand-mark {
+  margin-bottom: 1.5rem;
+}
+.player-entry-card h1 {
+  font-size: 2rem;
+  margin: 0.7rem 0;
+}
+.player-entry-card p {
+  line-height: 1.6;
+}
+.player-entry-card > button {
+  margin-top: 1rem;
+}
+.player-entry-card form > button {
+  margin-top: 1rem;
+  width: 100%;
+}
+.player-link-output {
+  width: 100%;
+}

@@ -1,0 +1,68 @@
+﻿// Standard choices are suggestions; custom values remain supported.
+export const alignments = [
+  'Lawful Good',
+  'Neutral Good',
+  'Chaotic Good',
+  'Lawful Neutral',
+  'Neutral',
+  'Chaotic Neutral',
+  'Lawful Evil',
+  'Neutral Evil',
+  'Chaotic Evil',
+]
+export const damageTypes = [
+  'Acid',
+  'Bludgeoning',
+  'Cold',
+  'Fire',
+  'Force',
+  'Lightning',
+  'Necrotic',
+  'Piercing',
+  'Poison',
+  'Psychic',
+  'Radiant',
+  'Slashing',
+  'Thunder',
+]
+export const weaponMasteries = ['Cleave', 'Graze', 'Nick', 'Push', 'Sap', 'Slow', 'Topple', 'Vex']
+export const spellSchools = [
+  'Abjuration',
+  'Conjuration',
+  'Divination',
+  'Enchantment',
+  'Evocation',
+  'Illusion',
+  'Necromancy',
+  'Transmutation',
+]
+export const backgroundNames = [
+  'Acolyte',
+  'Artisan',
+  'Charlatan',
+  'Criminal',
+  'Entertainer',
+  'Farmer',
+  'Guard',
+  'Guide',
+  'Hermit',
+  'Merchant',
+  'Noble',
+  'Sage',
+  'Sailor',
+  'Scribe',
+  'Soldier',
+  'Wayfarer',
+]
+export const speciesNames = [
+  'Aasimar',
+  'Dragonborn',
+  'Dwarf',
+  'Elf',
+  'Gnome',
+  'Goliath',
+  'Halfling',
+  'Human',
+  'Orc',
+  'Tiefling',
+]

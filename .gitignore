@@ -1,0 +1,26 @@
+# Local character documents and workbook exports
+*.xlsx
+*.xls
+*.docx
+*.pdf
+/app/src/data/punpun.json
+
+# Local configuration; the player mode and example contain public settings only
+**/.env*
+!/app/.env.players
+!/app/.env.example
+
+# Generated files and local tooling
+**/node_modules/
+**/dist/
+**/dist-players/
+**/test-results/
+**/playwright-report/
+**/.pages-check/
+*.log
+*.tsbuildinfo
+/.codex/
+/.agents/
+/.vscode/
+/.idea/
+.DS_Store
