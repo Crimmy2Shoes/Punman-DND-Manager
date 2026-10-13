@@ -584,10 +584,23 @@ export function validateSkillChange(
     after.known &&
     settings.skillLimit === null &&
     after.unmatched.length > before.unmatched.length
-  )
+  ) {
+    const name = SKILLS[Number(address.slice(1)) - 25]
+    const pools = before.grants.filter((g) => g.allowed.includes(name))
+    const details = pools.map((g) => {
+      const used = [...before.assigned]
+        .filter(([slot]) => before.slots[slot] === g)
+        .map(([, skill]) => skill)
+      return `${g.source}: ${g.count} ${g.count === 1 ? 'slot' : 'slots'}${used.length ? `, currently used by ${used.join(' and ')}` : ''}.`
+    })
     throw Error(
-      'This skill cannot fit the available class, race, background or subclass grants. Add a DM bonus or an explicit skill limit override if approved.',
+      `${name} cannot fit the available class, race, background or subclass grants. ${
+        details.length
+          ? details.join(' ') + ' Replace a skill using one of these grants.'
+          : 'None of your current grants allows this skill.'
+      } Unfilled background or other fixed grants are not free choices. If your DM granted another choice, add it in Rules & overrides.`,
     )
+  }
   if (
     settings.expertiseLimit === null &&
     after.expertiseUnmatched.length > before.expertiseUnmatched.length

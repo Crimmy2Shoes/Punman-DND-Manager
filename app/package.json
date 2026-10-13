@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "test": "node --test src/character.test.mjs src/sheetModel.test.mjs src/pugilist.test.mjs src/companionRules.test.mjs src/ruleLibrary.test.mjs src/expansion.test.mjs src/playerAccess.test.mjs",
+    "test": "node --test src/character.test.mjs src/sheetModel.test.mjs src/pugilist.test.mjs src/companionRules.test.mjs src/ruleLibrary.test.mjs src/expansion.test.mjs src/playerAccess.test.mjs src/notesModel.test.mjs",
     "test:e2e": "playwright test",
     "test:e2e:players": "playwright test --config playwright.players.config.ts",
     "test:all": "npm run test && npm run build && npm run test:e2e",

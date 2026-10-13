@@ -229,6 +229,31 @@ test('five skill proficiencies come from explicit class, race and background gra
   )
 })
 
+test('a full class pool explains why Acrobatics is blocked despite unfilled fixed grants', () => {
+  const { book, main, read, select } = character('Pugilist 5 Piss & Vinegar', 'Human', 'Urchin')
+  main.cells.AS16 = { value: 2 }
+  for (let row = 25; row <= 42; row++) main.cells['H' + row] = { value: 0 }
+  for (const name of ['Athletics', 'Intimidation', 'Perception']) select(name)
+  const next = (s, a) => (s === 'v2.1' && a === 'H25' ? 1 : read(s, a))
+  assert.equal(skillBudget(book, read, DEFAULT_RULES).remaining, 1)
+  assert.throws(
+    () => validateSkillChange(book, read, next, DEFAULT_RULES, 'H25'),
+    (e) => {
+      assert.match(e.message, /Acrobatics cannot fit/)
+      assert.match(e.message, /Pugilist: 2 slots/)
+      assert.match(e.message, /Athletics/)
+      assert.match(e.message, /Perception/)
+      return true
+    },
+  )
+  select('Athletics', 0)
+  assert.doesNotThrow(() => validateSkillChange(book, read, next, DEFAULT_RULES, 'H25'))
+  select('Athletics')
+  assert.doesNotThrow(() =>
+    validateSkillChange(book, read, next, { ...DEFAULT_RULES, extraSkills: 1 }, 'H25'),
+  )
+})
+
 test('a lower calculated sheet total wins over reference estimates and explicit overrides remain available', () => {
   const { book, main, read } = character('Pugilist 5 Arena Royale', 'Half-Orc', 'Criminal')
   main.cells.AS16 = { value: 3 }

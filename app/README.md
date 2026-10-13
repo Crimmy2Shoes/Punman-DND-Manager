@@ -23,7 +23,7 @@ Browser tests use installed Microsoft Edge. Google tests are mocked and do not m
 
 ## Connect your sheet
 
-Click Connection settings. Your spreadsheet URL is prefilled. Follow the in-app guide:
+In the owner preview, click **Connect Google Sheet**. Your spreadsheet URL is prefilled. Follow the in-app guide:
 
 1. Create/select a Google Cloud project and enable Google Sheets API.
 2. Configure OAuth audience as External / Testing and add your email as a test user.
@@ -38,9 +38,10 @@ Official guide: [Google Sheets JavaScript quickstart](https://developers.google.
 ## Everyday use
 
 - Play: sheet combat statistics and level-gated actions, bonus actions, reactions, movement and passive abilities; editable health, Inspiration, condition, death markers and attacks.
-- Character: identity, base scores, effective scores, bonuses, skills and personality.
+- Character: identity, base scores, effective scores, bonuses and skills.
 - Spells: 361 core entries plus five Tasha’s grant spells; search/filter/add, casting counts, class access, known/prepared distinctions and native slots.
-- Inventory & Notes: sheet item rows, quantities, weights, costs, coins and story lines.
+- Inventory: sheet item rows, quantities, weights, costs and coins.
+- Notes & Lore: personality traits, ideals, bonds, flaws, appearance, allies and organizations, and character backstory.
 - Workbook: inspect all tabs, search and select a cell directly, including DM reference tables.
 - Pugilist: shown only when this character has Pugilist levels, including multiclass characters; sheet-derived class statistics, Moxie, Fight Club resource trackers and reviewed ability edits. Install the spreadsheet additions once using [the setup guide](../References/PUGILIST_SETUP.md). The original image formulas are retained.
 
@@ -56,7 +57,7 @@ For a separate character, first make a copy of the Google sheet and connect that
 
 Keep your existing character spreadsheet files together in the shared Drive folder. Everyone opens the same app address, pastes their file’s normal URL, and clicks **Open character**. Google sign-in appears when needed. Players retain the full editor, and the app creates no spreadsheets. Shared-folder permissions determine which files they can view or edit.
 
-Run `npm.cmd run build:players` and host only `dist-players`. The player build opens a URL entry form, remembers the last successful URL, and excludes the owner workbook preview and legacy journal. **Change spreadsheet** returns to the paste form without mixing drafts or requiring another Google sign-in while access remains valid. Special player links are optional. Configure the hosted origin in your OAuth client and add friends as OAuth test users if the audience is Testing. See [the player setup guide](../References/PLAYER_SETUP.md).
+Run `npm.cmd run build:players` and host only `dist-players`. The player build opens a URL entry form, remembers the last successful URL, and excludes the owner workbook preview and legacy journal. **Sign out** returns to the paste form. Drafts remain separate when you open another sheet, which requires Google authorization. Special player links are optional. Configure the hosted origin in your OAuth client and add friends as OAuth test users if the audience is Testing. See [the player setup guide](../References/PLAYER_SETUP.md).
 
 For GitHub Pages, use [the included workflow and setup guide](../References/GITHUB_PAGES_SETUP.md). Set the repository variable `VITE_GOOGLE_CLIENT_ID`; the workflow supplies `VITE_BASE_PATH` and deploys only the player build. The extracted `src/data/punpun.json` is local and ignored by Git; a source checkout without it builds successfully and can read a connected Google character sheet.
 

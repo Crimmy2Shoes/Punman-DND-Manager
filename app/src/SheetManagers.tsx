@@ -52,8 +52,6 @@ export function SheetInventory({ book, value, field, busy, stage }: Props) {
   const [query, setQuery] = useState(''),
     [page, setPage] = useState(0),
     [selected, setSelected] = useState<string | null>(null),
-    [notes, setNotes] = useState<'backstory' | 'allies' | null>(null),
-    [notePage, setNotePage] = useState(0),
     [itemLibrary, setItemLibrary] = useState(false)
   const tab = 'Inventory'
   const entries = Array.from({ length: 74 }, (_, i) => i + 3).flatMap((row) => [
@@ -130,24 +128,6 @@ export function SheetInventory({ book, value, field, busy, stage }: Props) {
           {field('Total item value', 'D20', tab)}
         </div>
       </Panel>
-      <div className="actions">
-        <button
-          onClick={() => {
-            setNotePage(0)
-            setNotes('backstory')
-          }}
-        >
-          Edit backstory
-        </button>
-        <button
-          onClick={() => {
-            setNotePage(0)
-            setNotes('allies')
-          }}
-        >
-          Edit allies & organizations
-        </button>
-      </div>
       {entry && (
         <Modal
           title={String(value(tab, entry.name)) || 'Add inventory item'}
@@ -215,27 +195,6 @@ export function SheetInventory({ book, value, field, busy, stage }: Props) {
                 }
           }
         />
-      )}
-      {notes && (
-        <Modal
-          title={notes === 'backstory' ? 'Backstory' : 'Allies & organizations'}
-          onClose={() => setNotes(null)}
-        >
-          <div className="field-grid">
-            {Array.from({ length: 14 }, (_, i) => i)
-              .slice(notePage * 8, notePage * 8 + 8)
-              .map((i) =>
-                field(
-                  `Line ${i + 1}`,
-                  'R' + ((notes === 'backstory' ? 164 : 149) + i),
-                  'v2.1',
-                  'long',
-                ),
-              )}
-          </div>
-          <Pager page={notePage} count={14} onChange={setNotePage} />
-          <button onClick={() => setNotes(null)}>Done</button>
-        </Modal>
       )}
     </>
   )

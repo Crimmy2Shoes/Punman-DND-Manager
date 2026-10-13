@@ -4,7 +4,6 @@ import {
   Swords,
   Sparkles,
   Backpack,
-  Settings,
   RefreshCw,
   Feather,
   ExternalLink,
@@ -41,6 +40,7 @@ import BackgroundPicker from './BackgroundPicker'
 import { SheetInventory, SheetSpells } from './SheetManagers'
 import { AbilityGuide, RulesDialog } from './CompanionPanels'
 import SheetSkills from './SheetSkills'
+import SheetNotes from './SheetNotes'
 import {
   characterClasses,
   DEFAULT_RULES,
@@ -72,7 +72,8 @@ const sections = [
   { name: 'Play', icon: Swords },
   { name: 'Character', icon: BookOpen },
   { name: 'Spells', icon: Sparkles },
-  { name: 'Inventory & Notes', icon: Backpack },
+  { name: 'Inventory', icon: Backpack },
+  { name: 'Notes & Lore', icon: Feather },
   { name: 'Pugilist', icon: Swords },
   { name: 'Workbook', icon: BookOpen },
 ]
@@ -113,7 +114,6 @@ interface PlayerSession {
   url: string
   clientId: string
   onSignOut: () => void
-  onChangeSheet: () => void
 }
 export default function SpreadsheetApp({
   initialWorkbook: initial,
@@ -155,6 +155,7 @@ export default function SpreadsheetApp({
     [review, setReview] = useState(false),
     [busy, setBusy] = useState(false),
     [error, setError] = useState(''),
+    [blocked, setBlocked] = useState<{ message: string; skill: boolean } | null>(null),
     [notice, setNotice] = useState(''),
     [status, setStatus] = useState(connectionStatus()),
     [auto, setAuto] = useState(true),
@@ -290,8 +291,17 @@ export default function SpreadsheetApp({
     return () => window.removeEventListener('beforeunload', guard)
   }, [changes.length])
   const stage = (sheet: string, cell: string, value: Value) => {
-    if (lock.current) return
-    if (player && (!live || !connectionStatus().connected)) return
+    const skill = sheet === 'v2.1' && /^H(2[5-9]|3\d|4[0-2])$/.test(cell)
+    const reject = (message: string) => {
+      setError(message)
+      setBlocked({ message, skill })
+    }
+    if (lock.current)
+      return reject('Wait for the current spreadsheet operation to finish, then try again.')
+    if (player && (!live || !connectionStatus().connected))
+      return reject(
+        'Your Google session has expired. Sign out and reopen your character to continue editing.',
+      )
     const key = keyOf(sheet, cell)
     const old = edits[key]
     const edit = {
@@ -313,11 +323,44 @@ export default function SpreadsheetApp({
         return next
       })
     } catch (e) {
-      setError((e as Error).message)
+      reject((e as Error).message)
     }
   }
   const value = (sheet: string, cell: string) =>
     edits[keyOf(sheet, cell)]?.value ?? cellValue(book, sheet, cell)
+  const stageText = (cells: Record<string, Value>) => {
+    try {
+      if (lock.current)
+        throw Error('Wait for the current spreadsheet operation to finish, then try again.')
+      if (player && (!live || !connectionStatus().connected))
+        throw Error(
+          'Your Google session has expired. Sign out and reopen your character to continue editing.',
+        )
+      const pending = Object.entries(cells).map(([address, value]) => ({
+        tab: 'v2.1',
+        address,
+        value,
+        before: edits[keyOf('v2.1', address)]?.before ?? cellValue(book, 'v2.1', address),
+      }))
+      pending.forEach((edit) => validateEdit(book, edit))
+      setError('')
+      setEdits((current) => {
+        const next = { ...current }
+        pending.forEach((edit) => {
+          const key = keyOf(edit.tab, edit.address)
+          if (edit.value === edit.before) delete next[key]
+          else next[key] = edit
+        })
+        return next
+      })
+      return true
+    } catch (e) {
+      const message = (e as Error).message
+      setError(message)
+      setBlocked({ message, skill: false })
+      return false
+    }
+  }
   const hasPugilist = characterClasses(book, value).some(
     (c) => c.name === 'Pugilist' && c.level > 0,
   )
@@ -666,6 +709,22 @@ export default function SpreadsheetApp({
             <small>{String(cellValue(book, 'v2.1', 'T5')) || 'Create your adventurer'}</small>
           </span>
         </div>
+        <nav className="sidebar-nav" aria-label="Quick navigation">
+          {tabs.map(({ name, icon: Icon }) => {
+            return (
+              <button
+                key={name}
+                aria-label={name}
+                title={name}
+                aria-current={activeTab === name ? 'page' : undefined}
+                onClick={() => setTab(name)}
+              >
+                <Icon size={18} />
+                <span>{name}</span>
+              </button>
+            )
+          })}
+        </nav>
         <button
           className="new-character"
           aria-label={player ? 'Edit character' : 'Create / edit character'}
@@ -692,18 +751,6 @@ export default function SpreadsheetApp({
         {player && (
           <button
             className="new-character"
-            aria-label="Change spreadsheet"
-            title="Change spreadsheet"
-            disabled={busy}
-            onClick={player.onChangeSheet}
-          >
-            <BookOpen size={18} />
-            <span>Change spreadsheet</span>
-          </button>
-        )}
-        {player && (
-          <button
-            className="new-character"
             aria-label="Sign out"
             title="Sign out"
             disabled={busy}
@@ -715,15 +762,6 @@ export default function SpreadsheetApp({
         )}
         <button
           className="new-character"
-          aria-label="Connection settings"
-          title="Connection settings"
-          onClick={() => setSetup(true)}
-        >
-          <Settings size={18} />
-          <span>Connection settings</span>
-        </button>
-        <button
-          className="new-character"
           aria-label="Rules & overrides"
           title="Rules & overrides"
           onClick={() => setRulesOpen(true)}
@@ -731,22 +769,7 @@ export default function SpreadsheetApp({
           <BookOpen size={18} />
           <span>Rules & overrides</span>
         </button>
-        <nav className="sidebar-nav" aria-label="Quick navigation">
-          {tabs.map(({ name, icon: Icon }) => {
-            return (
-              <button
-                key={name}
-                aria-label={name}
-                title={name}
-                aria-current={activeTab === name ? 'page' : undefined}
-                onClick={() => setTab(name)}
-              >
-                <Icon size={18} />
-                <span>{name}</span>
-              </button>
-            )
-          })}
-        </nav>
+
         <button
           className="theme-toggle"
           aria-label={dark ? 'Switch to light mode' : 'Switch to dark mode'}
@@ -805,11 +828,11 @@ export default function SpreadsheetApp({
             <input type="checkbox" checked={auto} onChange={(e) => setAuto(e.target.checked)} />{' '}
             Refresh every 30 seconds
           </label>
-          {!status.connected && (
+          {!status.connected && !player && (
             <button onClick={() => setSetup(true)}>Connect Google Sheet</button>
           )}
         </div>
-        {error && (
+        {error && !blocked && (
           <div className="notice error" role="alert">
             {error}
           </div>
@@ -971,18 +994,8 @@ export default function SpreadsheetApp({
                   {abilities.map((a, i) => field(`${a} save`, 'I' + (17 + i)))}
                 </div>
               </Panel>
-              <Panel title="Personality & proficiencies">
+              <Panel title="Other proficiencies">
                 <div className="field-grid">
-                  {['Personality traits', 'Ideals', 'Bonds', 'Flaws'].flatMap((label, group) =>
-                    Array.from({ length: 3 }, (_, line) =>
-                      field(
-                        `${label}${line ? ` line ${line + 1}` : ''}`,
-                        `AE${12 + group * 4 + line}`,
-                        'v2.1',
-                        'long',
-                      ),
-                    ),
-                  )}
                   {field('Other proficiencies', 'I53', 'v2.1', 'long')}
                   {field('Other speeds', 'I54')}
                 </div>
@@ -1006,8 +1019,11 @@ export default function SpreadsheetApp({
               rules={ruleSettings}
             />
           )}
-          {activeTab === 'Inventory & Notes' && (
+          {activeTab === 'Inventory' && (
             <SheetInventory book={book} value={value} field={field} busy={busy} stage={stage} />
+          )}
+          {activeTab === 'Notes & Lore' && (
+            <SheetNotes book={book} value={value} field={field} busy={busy} stageText={stageText} />
           )}
           {activeTab === 'Pugilist' && hasPugilist && (
             <PugilistPanel
@@ -1106,7 +1122,7 @@ export default function SpreadsheetApp({
           </Suspense>
         )}
       </main>
-      {setup && (
+      {setup && !player && (
         <Modal
           title="Connect your Google Sheet"
           onClose={() => {
@@ -1190,11 +1206,8 @@ export default function SpreadsheetApp({
               </button>
               <button
                 onClick={() => {
-                  if (player) player.onSignOut()
-                  else {
-                    disconnect()
-                    setStatus(connectionStatus())
-                  }
+                  disconnect()
+                  setStatus(connectionStatus())
                 }}
               >
                 Disconnect
@@ -1208,6 +1221,39 @@ export default function SpreadsheetApp({
               ? 'drafts are stored separately for your character on this device. Your sheet is loaded after sign-in.'
               : 'drafts and the last read snapshot are stored on this device.'}
           </p>
+        </Modal>
+      )}
+      {blocked && (
+        <Modal
+          title={blocked.skill ? 'Skill choice unavailable' : 'Change unavailable'}
+          onClose={() => {
+            setBlocked(null)
+            setError('')
+          }}
+        >
+          <p role="alert">{blocked.message}</p>
+          <div className="actions">
+            <button
+              className="primary"
+              onClick={() => {
+                setBlocked(null)
+                setError('')
+              }}
+            >
+              Got it
+            </button>
+            {blocked.skill && (
+              <button
+                onClick={() => {
+                  setBlocked(null)
+                  setError('')
+                  setRulesOpen(true)
+                }}
+              >
+                Rules & overrides
+              </button>
+            )}
+          </div>
         </Modal>
       )}
       {wizard && (

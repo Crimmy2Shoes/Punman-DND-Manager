@@ -8,9 +8,9 @@ Everyone uses the same app address. Each character is an existing spreadsheet fi
 2. Open the character app, paste it into **Character spreadsheet URL**, and click **Open character**.
 3. Sign in with your own Google account when prompted, then edit and save your character.
 
-The app remembers the last successfully opened URL on that browser. **Edit character** changes the current character’s class, level, background, race, scores and skills. Spells, inventory, resources and notes are also editable. Changes are reviewed before saving to the same file; the app creates no spreadsheets.
+The app remembers the last successfully opened URL on that browser. **Edit character** changes the current character’s class, level, background, race, scores and skills. Spells, inventory and resources are also editable. **Notes & Lore** contains personality traits, ideals, bonds, flaws, appearance, allies and organizations, and character backstory. Changes are reviewed before saving to the same file; the app creates no spreadsheets.
 
-Use **Change spreadsheet** to paste another existing file’s link. Unsaved drafts and rule settings stay separate for each character. Switching sheets while Google access is valid does not require signing in again. Opening or reloading still fetches current data before displaying the editor. Your DM’s updates refresh while the connected app is visible.
+Use **Sign out** to return to the entry form and paste another existing file link. Unsaved drafts and rule settings stay separate for each character. Opening another sheet after signing out requires Google authorization. Opening or reloading fetches current data before displaying the editor. DM updates refresh while the connected app is visible.
 
 ## If a character file is Excel (.xlsx)
 
@@ -46,6 +46,6 @@ The player build excludes your extracted workbook preview, legacy journal and Ap
 
 Your local owner app can preview the paste form at `http://localhost:5173/?player=1`. The standalone player development command is `npm.cmd run dev:players`, normally on port 5174; add that origin to Google if testing actual sign-in there. A localhost address only works on the computer running the app.
 
-Try a player’s Google account: paste their normal sheet URL, open it, edit a value and save. Confirm the existing file changed. Test **Change spreadsheet** and verify drafts stay with their original file. A file the account cannot access should show an error. Browser tests use mocked Google responses and do not change real Drive files or permissions.
+Try a player’s Google account: paste their normal sheet URL, open it, edit a value and save. Confirm the existing file changed. Sign out and open another sheet to verify drafts stay with their original file. A file the account cannot access should show an error. Browser tests use mocked Google responses and do not change real Drive files or permissions.
 
 Player mode stores the last URL, drafts and rules on the device, but does not persist workbook snapshots. Signing out or Google access expiring closes the editor; drafts remain for the next authorized open. DM rules and custom choices can be transferred using the existing rules export/import.

@@ -171,10 +171,10 @@ test('players paste a shared-folder file URL and edit their existing character w
   await expect(
     page.getByRole('button', { name: 'Create / edit character', exact: true }),
   ).toHaveCount(0)
-  await page.getByRole('button', { name: 'Connection settings', exact: true }).click()
-  await expect(page.getByLabel('Spreadsheet URL', { exact: true })).toHaveCount(0)
-  await expect(page.getByLabel('Public OAuth client ID', { exact: true })).toHaveCount(0)
-  await page.getByRole('button', { name: 'Close dialog', exact: true }).click()
+  await expect(page.getByRole('button', { name: 'Connection settings', exact: true })).toHaveCount(
+    0,
+  )
+  await expect(page.getByRole('button', { name: 'Change spreadsheet', exact: true })).toHaveCount(0)
   await page.getByRole('button', { name: 'Edit character', exact: true }).click()
   const dialog = page.getByRole('dialog')
   await dialog.getByLabel('Character name', { exact: true }).fill('Alice Revised')
@@ -229,13 +229,13 @@ test('sign-out and reload require authorization; drafts stay isolated between ch
   await expect(page.getByLabel('Current HP', { exact: true })).toHaveValue('30')
   await expect(page.getByText('unsaved cell')).toHaveCount(0)
 })
-test('switching shared-folder sheets isolates drafts and reuses the Google session', async ({
+test('signing out to open another sheet isolates drafts and requires Google authorization', async ({
   page,
 }) => {
   const { requests } = await playerGoogle(page)
   await openCharacter(page)
   await page.getByLabel('Current HP', { exact: true }).fill('21')
-  await page.getByRole('button', { name: 'Change spreadsheet', exact: true }).click()
+  await page.getByRole('button', { name: 'Sign out', exact: true }).click()
   await page
     .getByLabel('Character spreadsheet URL', { exact: true })
     .fill(`https://docs.google.com/spreadsheets/d/${bob}/edit`)
@@ -247,14 +247,14 @@ test('switching shared-folder sheets isolates drafts and reuses the Google sessi
   await page.getByRole('button', { name: 'Save to spreadsheet', exact: true }).click()
   await expect(page.getByRole('dialog')).toHaveCount(0)
   expect(requests.filter((r) => r.method === 'POST').map((r) => r.id)).toEqual([bob])
-  await page.getByRole('button', { name: 'Change spreadsheet', exact: true }).click()
+  await page.getByRole('button', { name: 'Sign out', exact: true }).click()
   await page
     .getByLabel('Character spreadsheet URL', { exact: true })
     .fill(`https://docs.google.com/spreadsheets/d/${alice}/edit`)
   await page.getByRole('button', { name: 'Open character', exact: true }).click()
   await expect(page.getByRole('heading', { name: 'Alice Hero', exact: true })).toBeVisible()
   await expect(page.getByLabel('Current HP', { exact: true })).toHaveValue('21')
-  expect(await page.evaluate(() => (window as any).playerSignIns)).toBe(1)
+  expect(await page.evaluate(() => (window as any).playerSignIns)).toBe(3)
 })
 
 test('invalid links make no Google API request and remain editable for correction', async ({

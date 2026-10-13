@@ -119,7 +119,7 @@ export default function PlayerPortal() {
       <SpreadsheetApp
         key={selection.id}
         initialWorkbook={book}
-        player={{ ...selection, clientId, onSignOut: signOut, onChangeSheet: changeSheet }}
+        player={{ ...selection, clientId, onSignOut: signOut }}
       />
     )
   return (

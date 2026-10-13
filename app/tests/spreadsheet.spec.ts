@@ -166,7 +166,7 @@ async function mockGoogle(page: Page, withPugilist = false) {
     await route.fulfill({ json: { properties: { title: 'PunPun Live' }, sheets } })
   })
   await page.goto('/')
-  await page.getByRole('button', { name: 'Connection settings', exact: true }).click()
+  await page.getByRole('button', { name: 'Connect Google Sheet', exact: true }).click()
   await page.getByRole('button', { name: 'Sign in with Google', exact: true }).click()
   await expect(page.getByRole('heading', { name: 'PunPun', exact: true })).toBeVisible()
   return { book, writes }
@@ -254,7 +254,7 @@ test('desktop sections fit and remain accessible', async ({ page }) => {
   await page.goto('/')
   await expect(page.getByRole('navigation', { name: 'Character sections' })).toHaveCount(0)
   await expect(page.getByRole('button', { name: 'Character', exact: true })).toHaveCount(1)
-  for (const name of ['Play', 'Character', 'Spells', 'Inventory & Notes', 'Workbook']) {
+  for (const name of ['Play', 'Character', 'Spells', 'Inventory', 'Notes & Lore', 'Workbook']) {
     await page.getByRole('button', { name, exact: true }).click()
     expect(
       await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth),
@@ -439,7 +439,7 @@ test('inventory searches distant sheet rows and edits items through compact dial
   inventory.cells.J70 = { value: 'Faraway shield' }
   inventory.cells.I70 = { value: 2 }
   await page.getByRole('button', { name: 'Refresh', exact: true }).click()
-  await page.getByRole('button', { name: 'Inventory & Notes', exact: true }).click()
+  await page.getByRole('button', { name: 'Inventory', exact: true }).click()
   await page.getByLabel('Search inventory', { exact: true }).fill('Faraway')
   await page.getByRole('button', { name: /^Faraway shield/ }).click()
   await expect(page.getByLabel('Quantity', { exact: true })).toHaveValue('2')
@@ -500,7 +500,7 @@ test('desktop dark mode and collapsed navigation persist and remain accessible',
   await page.reload()
   await expect(page.locator('html')).toHaveAttribute('data-theme', 'dark')
   await expect(page.getByRole('button', { name: 'Expand sidebar', exact: true })).toBeVisible()
-  for (const name of ['Play', 'Character', 'Spells', 'Inventory & Notes', 'Workbook']) {
+  for (const name of ['Play', 'Character', 'Spells', 'Inventory', 'Notes & Lore', 'Workbook']) {
     await page.getByRole('button', { name, exact: true }).click()
     const result = await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa']).analyze()
     expect(
@@ -570,6 +570,8 @@ test('skill count restrictions, DM bonuses and custom abilities persist for the 
   await expect(page.locator('.budget-stats')).toContainText('2 / 2')
   await page.getByLabel('Stealth', { exact: true }).selectOption('1')
   await expect(page.getByRole('alert')).toContainText('2 skill proficiency slots')
+  await expect(page.getByRole('dialog', { name: 'Skill choice unavailable' })).toBeVisible()
+  await page.getByRole('button', { name: 'Got it', exact: true }).click()
   await expect(page.getByLabel('Stealth', { exact: true })).toHaveValue('0')
   await page
     .locator('.sidebar')
@@ -594,6 +596,148 @@ test('skill count restrictions, DM bonuses and custom abilities persist for the 
   await expect(page.getByRole('button', { name: /Arena feint/ })).toBeVisible()
   await page.getByRole('button', { name: 'Character', exact: true }).click()
   await expect(page.locator('.budget-stats')).toContainText('3 / 3')
+})
+
+test('Acrobatics explains occupied class choices and allows replacing one', async ({ page }) => {
+  const { book } = await mockGoogle(page, true)
+  const main = book.sheets[0]
+  Object.assign(main.cells, {
+    T5: { value: 'Pugilist 5 Piss & Vinegar' },
+    T7: { value: 'Human' },
+    AJ11: { value: 'Urchin' },
+    AS16: { value: 2 },
+  })
+  for (let row = 25; row <= 42; row++) main.cells['H' + row] = { value: 0 }
+  for (const address of ['H28', 'H32', 'H36']) main.cells[address] = { value: 1 }
+  await page.getByRole('button', { name: 'Refresh', exact: true }).click()
+  await page.getByRole('button', { name: 'Character', exact: true }).click()
+  await expect(page.locator('.budget-stats')).toContainText('3 / 4')
+  await expect(page.locator('.skill-grant-summary')).toContainText('Pugilist choices 2 / 2')
+  await page.getByLabel('Acrobatics', { exact: true }).selectOption('1')
+  const dialog = page.getByRole('dialog', { name: 'Skill choice unavailable', exact: true })
+  await expect(dialog).toContainText('Pugilist: 2 slots')
+  await expect(dialog).toContainText('Athletics')
+  await expect(dialog).toContainText('Perception')
+  await dialog.getByRole('button', { name: 'Got it', exact: true }).click()
+  await expect(page.getByLabel('Acrobatics', { exact: true })).toHaveValue('0')
+  await page.getByLabel('Athletics', { exact: true }).selectOption('0')
+  await page.getByLabel('Acrobatics', { exact: true }).selectOption('1')
+  await expect(page.getByLabel('Acrobatics', { exact: true })).toHaveValue('1')
+  await expect(page.getByRole('dialog')).toHaveCount(0)
+  await page.getByLabel('Acrobatics', { exact: true }).selectOption('e')
+  await expect(page.getByRole('dialog', { name: 'Skill choice unavailable' })).toContainText(
+    '0 Expertise slots',
+  )
+  await page
+    .getByRole('dialog')
+    .getByRole('button', { name: 'Rules & overrides', exact: true })
+    .click()
+  await page.getByLabel('Extra Expertise from DM', { exact: true }).fill('1')
+  await page.getByRole('button', { name: 'Save rules', exact: true }).click()
+  await page.getByLabel('Acrobatics', { exact: true }).selectOption('e')
+  await expect(page.getByLabel('Acrobatics', { exact: true })).toHaveValue('e')
+})
+
+test('Notes & Lore edits the real text boxes and appearance without touching labels or artwork', async ({
+  page,
+}) => {
+  const { book, writes } = await mockGoogle(page)
+  const main = book.sheets[0]
+  const outside = (main.cells.R164 = { value: 'Outside the backstory box' })
+  main.cells.R165 = { value: 'Existing story' }
+  main.cells.R147 = { value: 'Old ally' }
+  main.cells.R148 = { value: 'Old organization' }
+  await page.getByRole('button', { name: 'Refresh', exact: true }).click()
+  await page.getByRole('button', { name: 'Notes & Lore', exact: true }).click()
+  await expect(page.getByLabel('Character backstory', { exact: true })).toHaveValue(
+    'Existing story',
+  )
+  await expect(page.getByLabel('Allies & organizations', { exact: true })).toHaveValue(
+    'Old ally\nOld organization',
+  )
+  await page.getByLabel('Personality traits', { exact: true }).fill('Determined\nQuick to laugh')
+  await page.getByLabel('Ideals', { exact: true }).fill('Protect the weak')
+  await page.getByLabel('Bonds', { exact: true }).fill('My old neighborhood')
+  await page.getByLabel('Flaws', { exact: true }).fill('Too stubborn')
+  const appearance = {
+    Age: '24',
+    Height: '6 ft',
+    Weight: '180 lb',
+    Size: 'Medium',
+    Gender: 'Male',
+    Eyes: 'Brown',
+    Hair: 'Black',
+    Skin: 'Tan',
+  }
+  for (const [label, text] of Object.entries(appearance))
+    await page.getByLabel(label, { exact: true }).fill(text)
+  const story = Array.from({ length: 16 }, (_, i) => `Story line ${i + 1}`).join('\n')
+  await page.getByLabel('Character backstory', { exact: true }).fill(story)
+  await page.getByLabel('Allies & organizations', { exact: true }).fill('A new ally')
+  await page.getByRole('button', { name: 'Review changes', exact: true }).click()
+  await page.getByRole('button', { name: 'Save to spreadsheet', exact: true }).click()
+  await expect(page.getByRole('dialog')).toHaveCount(0)
+  const ranges = (writes[0] as any).data.map((e: any) => e.range)
+  expect(ranges).toContain("'v2.1'!R165")
+  expect(ranges).toContain("'v2.1'!R177")
+  expect(ranges).toContain("'v2.1'!R147")
+  expect(ranges).toContain("'v2.1'!R148")
+  expect(ranges).not.toContain("'v2.1'!R164")
+  expect(ranges).not.toContain("'v2.1'!R163")
+  expect(ranges).not.toContain("'v2.1'!R178")
+  expect(main.cells.R164).toBe(outside)
+  expect(main.cells.R178.value).toBe('CHARACTER BACKSTORY')
+  expect(main.cells.R148.value).toBe('')
+  expect(main.cells.C155.formula).toContain('IMAGE')
+  await expect(page.getByLabel('Character backstory', { exact: true })).toHaveValue(story)
+  await page.reload()
+  await page.getByRole('button', { name: 'Notes & Lore', exact: true }).click()
+  await expect(page.getByLabel('Character backstory', { exact: true })).toHaveValue(story)
+  await expect(page.getByLabel('Personality traits', { exact: true })).toHaveValue(
+    'Determined\nQuick to laugh',
+  )
+  await page.setViewportSize({ width: 1440, height: 1000 })
+  await page.getByRole('button', { name: 'Switch to dark mode', exact: true }).click()
+  await page.screenshot({ path: 'test-results/notes-lore-desktop-dark.png', fullPage: true })
+  await page.getByRole('button', { name: 'Inventory', exact: true }).click()
+  await expect(page.getByLabel('Character backstory', { exact: true })).toHaveCount(0)
+  await expect(page.getByRole('button', { name: 'Edit backstory', exact: true })).toHaveCount(0)
+})
+
+test('notes follow DM updates, keep typed newlines and reject invalid blocks without partial drafts', async ({
+  page,
+}) => {
+  await page.clock.install()
+  const { book } = await mockGoogle(page)
+  const main = book.sheets[0]
+  main.cells.R165 = { value: 'Old story' }
+  await page.getByRole('button', { name: 'Refresh', exact: true }).click()
+  await page.getByRole('button', { name: 'Notes & Lore', exact: true }).click()
+  const story = page.getByLabel('Character backstory', { exact: true })
+  await story.focus()
+  main.cells.R165 = { value: 'DM updated story' }
+  await page.clock.runFor(31000)
+  await expect(story).toHaveValue('DM updated story')
+  await story.press('End')
+  await story.press('Enter')
+  await expect(story).toHaveValue('DM updated story\n')
+  await story.pressSequentially('Next chapter')
+  await expect(story).toHaveValue('DM updated story\nNext chapter')
+  await page.getByRole('button', { name: 'Review changes', exact: true }).click()
+  await page.getByRole('button', { name: 'Use sheet value', exact: true }).click()
+  await page.getByRole('button', { name: 'Close dialog', exact: true }).click()
+  main.cells.R166 = {
+    value: '',
+    validation: { type: 'NUMBER_BETWEEN', values: ['0', '10'], strict: true },
+  }
+  await page.getByRole('button', { name: 'Refresh', exact: true }).click()
+  await story.fill('Changed first line\nInvalid second line')
+  await expect(page.getByRole('dialog', { name: 'Change unavailable', exact: true })).toContainText(
+    'R166',
+  )
+  await page.getByRole('button', { name: 'Got it', exact: true }).click()
+  await expect(story).toHaveValue('DM updated story')
+  await expect(page.locator('.draft-bar')).toHaveCount(0)
 })
 
 test('compact skills show the five-skill sources, filter training and preserve cell saves', async ({
@@ -796,7 +940,7 @@ test('item library stages armor values through the existing reviewed inventory s
   page,
 }) => {
   const { book, writes } = await mockGoogle(page)
-  await page.getByRole('button', { name: 'Inventory & Notes', exact: true }).click()
+  await page.getByRole('button', { name: 'Inventory', exact: true }).click()
   await page.getByRole('button', { name: 'Browse items', exact: true }).click()
   await page.getByLabel('Search item library', { exact: true }).fill('Plate')
   await page.getByRole('button', { name: /^Plate Mundane/ }).click()
@@ -820,7 +964,7 @@ test('magic item references show attunement and leave unspecified price/weight b
   page,
 }) => {
   await mockGoogle(page)
-  await page.getByRole('button', { name: 'Inventory & Notes', exact: true }).click()
+  await page.getByRole('button', { name: 'Inventory', exact: true }).click()
   await page.getByRole('button', { name: 'Browse items', exact: true }).click()
   await page.getByLabel('Search item library', { exact: true }).fill('Amulet of Health')
   await page.getByRole('button', { name: /^Amulet of Health\b/ }).click()

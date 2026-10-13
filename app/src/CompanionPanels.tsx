@@ -78,9 +78,31 @@ export function SkillSummary({ book, read, settings, onSettings }: Props) {
         </div>
         <div>
           <strong>{knownLimit ? b.remaining : '—'}</strong>
-          <span>Skills left</span>
+          <span>Unfilled grants</span>
         </div>
       </div>
+      {b.known && settings.enforce && settings.skillLimit === null && (
+        <div className="skill-grant-summary" aria-label="Skill grants">
+          {b.grants
+            .filter((g) => g.allowed.length > 1)
+            .map((g, i) => {
+              const used = [...b.assigned.keys()].filter((slot) => b.slots[slot] === g).length
+              return (
+                <span key={`${g.source}-${i}`}>
+                  {g.source} choices{' '}
+                  <strong>
+                    {used} / {g.count}
+                  </strong>
+                </span>
+              )
+            })}
+          {b.bgSkills.length > 0 && (
+            <span>
+              {String(read('v2.1', 'AJ11'))} grants <strong>{b.bgSkills.join(' · ')}</strong>
+            </span>
+          )}
+        </div>
+      )}
       {(!b.known ||
         b.unmatched.length > 0 ||
         b.selected.length > b.limit ||

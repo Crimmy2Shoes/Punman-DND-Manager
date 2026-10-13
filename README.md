@@ -13,7 +13,7 @@ npm.cmd run dev
 
 Run `npm.cmd run build` to type-check and produce a production build.
 
-For friends, run `npm.cmd run build:players` and host only `app/dist-players`. Everyone opens the same app, pastes their character spreadsheet’s normal URL from your shared Drive folder, and clicks **Open character**. Players retain full editing of the existing file; **Change spreadsheet** keeps drafts separate, and the app creates no spreadsheets. The player build excludes your workbook preview. See [player sharing and hosting setup](References/PLAYER_SETUP.md); Google folder and file permissions determine access.
+For friends, run `npm.cmd run build:players` and host only `app/dist-players`. Everyone opens the same app, pastes their character spreadsheet’s normal URL from your shared Drive folder, and clicks **Open character**. Players retain full editing of the existing file; **Sign out** returns to the sheet entry form; drafts stay separate, and the app creates no spreadsheets. The player build excludes your workbook preview. See [player sharing and hosting setup](References/PLAYER_SETUP.md); Google folder and file permissions determine access.
 
 [GitHub Pages setup](References/GITHUB_PAGES_SETUP.md) explains the included deployment workflow. It builds the player app on pushes to `main`, handles the repository URL path, and publishes only the verified player output. Local character exports and environment files are excluded from Git.
 
@@ -26,7 +26,8 @@ A fantasy journal with parchment/light and forest/dark themes, burgundy and gold
 - Play: spreadsheet combat statistics, level-gated actions/bonus actions/reactions, movement, HP, attacks, Inspiration and death saves.
 - Character: identity, abilities, skill/Expertise budgets, saves, traits and feats. Rules & overrides supports DM grants and custom abilities.
 - Spells: 361 core 2014 entries plus five Tasha’s grant spells, class access, known/prepared distinctions, subclass grants and native slots.
-- Inventory & Notes: searchable 437-entry SRD item library, effects/attunement references, reviewed inventory additions, currency, costs, weights and notes.
+- Inventory: searchable 437-entry SRD item library, effects and attunement references, reviewed inventory additions, currency, costs and weights.
+- Notes & Lore: personality traits, ideals, bonds, flaws, appearance, allies and organizations, and character backstory.
 - Workbook: every tab, reference tables, cell search and direct cell selection.
 - Pugilist: spreadsheet integration and resource controls; see [setup](References/PUGILIST_SETUP.md).
 
